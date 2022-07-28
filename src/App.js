@@ -1,5 +1,6 @@
 import React from "react"
 import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 import Card from "./components/Card"
 import data from "./data"
 
@@ -8,7 +9,6 @@ export default function App() {
     const cards = data.map(item => {
         return (
             <Card
-                lastElId={dataLength}
                 key={item.id}
                 {...item}
             />
@@ -17,10 +17,13 @@ export default function App() {
     
     return (
         <div>
-            <Navbar />
-            <section className="cards-list">
-                {cards}
-            </section>
+            <div className="app">
+                <Navbar />
+                <section className="cards-list">
+                    {cards}
+                </section>
+            </div>
+            <Footer/>
         </div>
     )
 }
